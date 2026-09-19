@@ -1,7 +1,5 @@
-/target/
+target/
 !.mvn/wrapper/maven-wrapper.jar
-target
-/target
 
 ### STS ###
 .apt_generated
@@ -190,7 +188,7 @@ build/
 .settings
 bin
 build
-/target
+
 dependency-reduced-pom.xml
 *.sublime-*
 /scratch
