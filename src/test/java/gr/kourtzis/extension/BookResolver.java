@@ -16,6 +16,6 @@ public class BookResolver implements ParameterResolver {
     @Override
     public Object resolveParameter(ParameterContext parameterContext, ExtensionContext extensionContext)
             throws ParameterResolutionException {
-        return new Book();
+        return new Book("Effective Java", "Joshua Bloch", "978-0134686042");
     }
 }
