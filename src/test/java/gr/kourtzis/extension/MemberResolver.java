@@ -17,6 +17,6 @@ public class MemberResolver implements ParameterResolver {
     @Override
     public Object resolveParameter(ParameterContext parameterContext, ExtensionContext extensionContext)
             throws ParameterResolutionException {
-        return new Member();
+        return new Member(1001L, "Homer Simson");
     }
 }

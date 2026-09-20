@@ -12,7 +12,6 @@ public class MemberTest {
     @DisplayName("Checks if the member id is equal to 1001")
     void checkMemberIdResultsThousandOne(Member member) {
         long expectedId = 1001;
-        member.setId(1001);
 
         long actualId = member.getId();
 
@@ -22,8 +21,7 @@ public class MemberTest {
     @Test 
     @DisplayName("Checks if the member name is john")
     void checkMemberNameIsJohn(Member member) {
-        String expectedName = "john";
-        member.setName("john");
+        String expectedName = "Homer Simson";
 
         String actualName = member.getName();
 
