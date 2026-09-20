@@ -4,6 +4,11 @@ public class Member {
     private long id;
     private String name;
 
+    public Member(long id, final String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     public long getId() {
         return id;
     }
