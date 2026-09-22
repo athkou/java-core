@@ -5,10 +5,26 @@ public class Book {
     private String author;
     private String isbn;
 
+    private boolean available;
+
     public Book(final String title, final String author, final String isbn) {
         this.title = title;
         this.author = author;
         this.isbn = isbn;
+
+        available = true;
+    }
+
+    public void borrow() {
+        available = false;
+    }
+
+    public void returnBook() {
+        available = true;
+    }
+
+    public boolean isAvailable() {
+        return available;
     }
 
     public String getTitle() {

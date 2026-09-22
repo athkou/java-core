@@ -39,4 +39,21 @@ public class BookTest {
 
         Assertions.assertThat(actualIsbn).isEqualTo(expectedIsbn);
     } 
+
+    @Test 
+    @DisplayName("Book is not available")
+    void bookIsNotAvailable(Book book) {
+        book.borrow();
+
+        Assertions.assertThat(book.isAvailable()).isFalse();
+    }
+
+    @Test 
+    @DisplayName("Book is after return again available")
+    void bookIsAvailable(Book book) {
+        book.borrow();
+        book.returnBook();
+
+        Assertions.assertThat(book.isAvailable()).isTrue();
+    }
 }
