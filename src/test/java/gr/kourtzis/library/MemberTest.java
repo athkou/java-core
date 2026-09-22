@@ -27,4 +27,13 @@ public class MemberTest {
 
         Assertions.assertThat(actualName).isEqualTo(expectedName);
     }
+
+    @Test 
+    @DisplayName("Checks that the number of borrowed books is two")
+    void borrowedBooksAreTwo(Member member) {
+        member.borrowBook();
+        member.borrowBook();
+
+        Assertions.assertThat(member.getBorrowedBooks()).isEqualTo(2);
+    }
 }
