@@ -63,7 +63,7 @@ public class BookTest {
         final String errorMessage = "Argument can't be null or blank!";
 
 		Assertions.assertThatThrownBy(() -> {
-			Book book = new Book(null, "test", "test");
+			new Book(null, "test", "test");
 		})
 		.isInstanceOf(IllegalArgumentException.class)
 		.hasMessage(errorMessage);
@@ -75,7 +75,7 @@ public class BookTest {
         final String errorMessage = "Argument can't be null or blank!";
 
 		Assertions.assertThatThrownBy(() -> {
-			Book book = new Book("", "test", "test");
+			new Book("", "test", "test");
 		})
 		.isInstanceOf(IllegalArgumentException.class)
 		.hasMessage(errorMessage);
@@ -87,7 +87,7 @@ public class BookTest {
         final String errorMessage = "Argument can't be null or blank!";
 
 		Assertions.assertThatThrownBy(() -> {
-			Book book = new Book("test", null, "test");
+			new Book("test", null, "test");
 		})
 		.isInstanceOf(IllegalArgumentException.class)
 		.hasMessage(errorMessage);
@@ -99,7 +99,7 @@ public class BookTest {
         final String errorMessage = "Argument can't be null or blank!";
 
 		Assertions.assertThatThrownBy(() -> {
-			Book book = new Book("test", "", "test");
+			new Book("test", "", "test");
 		})
 		.isInstanceOf(IllegalArgumentException.class)
 		.hasMessage(errorMessage);
@@ -111,7 +111,7 @@ public class BookTest {
         final String errorMessage = "Argument can't be null or blank!";
 
 		Assertions.assertThatThrownBy(() -> {
-			Book book = new Book("test", "test", null);
+			new Book("test", "test", null);
 		})
 		.isInstanceOf(IllegalArgumentException.class)
 		.hasMessage(errorMessage);
@@ -123,7 +123,7 @@ public class BookTest {
         final String errorMessage = "Argument can't be null or blank!";
 
 		Assertions.assertThatThrownBy(() -> {
-			Book book = new Book("test", "test", "");
+			new Book("test", "test", "");
 		})
 		.isInstanceOf(IllegalArgumentException.class)
 		.hasMessage(errorMessage);

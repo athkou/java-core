@@ -44,7 +44,7 @@ public class MemberTest {
         String errorMessage = "id can't be a negative number!";
 
         Assertions.assertThatThrownBy(() -> {
-            Member member = new Member(0, "John");
+            new Member(0, "John");
         })
         .isInstanceOf(IllegalArgumentException.class)
         .hasMessage(errorMessage);
@@ -56,7 +56,7 @@ public class MemberTest {
         String errorMessage = "id can't be a negative number!";
 
         Assertions.assertThatThrownBy(() -> {
-            Member member = new Member(-3, "John");
+            new Member(-3, "John");
         })
         .isInstanceOf(IllegalArgumentException.class)
         .hasMessage(errorMessage);
@@ -68,7 +68,7 @@ public class MemberTest {
         String errorMessage = "name can't be null or blank!";
 
         Assertions.assertThatThrownBy(() -> {
-            Member member = new Member(3L, null);
+            new Member(3L, null);
         })
         .isInstanceOf(IllegalArgumentException.class)
         .hasMessage(errorMessage);
@@ -80,7 +80,7 @@ public class MemberTest {
         String errorMessage = "name can't be null or blank!";
 
         Assertions.assertThatThrownBy(() -> {
-            Member member = new Member(3L, "");
+            new Member(3L, "");
         })
         .isInstanceOf(IllegalArgumentException.class)
         .hasMessage(errorMessage);
