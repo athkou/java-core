@@ -8,6 +8,10 @@ public class Book {
     private boolean available;
 
     public Book(final String title, final String author, final String isbn) {
+        checkAttribute(title);
+        checkAttribute(author);
+        checkAttribute(isbn);
+        
         this.title = title;
         this.author = author;
         this.isbn = isbn;
@@ -53,5 +57,11 @@ public class Book {
 
     public void setIsbn(String isbn) {
         this.isbn = isbn;
+    }
+
+    private void checkAttribute(final String attribute) {
+        if(attribute == null || attribute.isBlank()) {
+            throw new IllegalArgumentException("Argument can't be null or blank!");
+        }
     }
 }

@@ -56,4 +56,76 @@ public class BookTest {
 
         Assertions.assertThat(book.isAvailable()).isTrue();
     }
+
+    @Test
+    @DisplayName("Checks that the constructor throws an IllegalArgumentException when title is null") 
+    void throwExceptionWhenTitleIsNull() {
+        final String errorMessage = "Argument can't be null or blank!";
+
+		Assertions.assertThatThrownBy(() -> {
+			Book book = new Book(null, "test", "test");
+		})
+		.isInstanceOf(IllegalArgumentException.class)
+		.hasMessage(errorMessage);
+    }
+
+    @Test
+    @DisplayName("Checks that the constructor throws an IllegalArgumentException when title is blank") 
+    void throwExceptionWhenTitleIsBlank() {
+        final String errorMessage = "Argument can't be null or blank!";
+
+		Assertions.assertThatThrownBy(() -> {
+			Book book = new Book("", "test", "test");
+		})
+		.isInstanceOf(IllegalArgumentException.class)
+		.hasMessage(errorMessage);
+    }
+
+    @Test
+    @DisplayName("Checks that the constructor throws an IllegalArgumentException when Author is null") 
+    void throwExceptionWhenAuthorIsNull() {
+        final String errorMessage = "Argument can't be null or blank!";
+
+		Assertions.assertThatThrownBy(() -> {
+			Book book = new Book("test", null, "test");
+		})
+		.isInstanceOf(IllegalArgumentException.class)
+		.hasMessage(errorMessage);
+    }
+
+    @Test
+    @DisplayName("Checks that the constructor throws an IllegalArgumentException when Author is blank") 
+    void throwExceptionWhenAuthorIsBlank() {
+        final String errorMessage = "Argument can't be null or blank!";
+
+		Assertions.assertThatThrownBy(() -> {
+			Book book = new Book("test", "", "test");
+		})
+		.isInstanceOf(IllegalArgumentException.class)
+		.hasMessage(errorMessage);
+    }
+
+    @Test
+    @DisplayName("Checks that the constructor throws an IllegalArgumentException when Isbn is null") 
+    void throwExceptionWhenIsbnIsNull() {
+        final String errorMessage = "Argument can't be null or blank!";
+
+		Assertions.assertThatThrownBy(() -> {
+			Book book = new Book("test", "test", null);
+		})
+		.isInstanceOf(IllegalArgumentException.class)
+		.hasMessage(errorMessage);
+    }
+
+    @Test
+    @DisplayName("Checks that the constructor throws an IllegalArgumentException when Isbn is blank") 
+    void throwExceptionWhenIsbnIsBlank() {
+        final String errorMessage = "Argument can't be null or blank!";
+
+		Assertions.assertThatThrownBy(() -> {
+			Book book = new Book("test", "test", "");
+		})
+		.isInstanceOf(IllegalArgumentException.class)
+		.hasMessage(errorMessage);
+    }
 }
