@@ -10,6 +10,16 @@ import gr.kourtzis.extension.BookResolver;
 @ExtendWith(BookResolver.class)
 public class BookTest {
     @Test 
+    @DisplayName("Checks that a new book is available")
+    void newBookIsAvailable() {
+        Book ocp = new Book(
+            "Oracle Certified Professional Java SE 21 Developer", 
+            "Jeanne Boyarsky,Scott Selikoff", 
+            "978-1-394-28661-4");
+        
+        Assertions.assertThat(ocp.isAvailable()).isTrue();
+    }
+    @Test 
     @DisplayName("Checking if Effective Java book has the right title")
     void checkTitleToBeEffectiveJava(Book book) {
         String expectedTitle = "Effective Java";
