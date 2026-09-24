@@ -1,5 +1,7 @@
 package gr.kourtzis.library;
 
+import java.util.Objects;
+
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -137,5 +139,41 @@ public class BookTest {
 		})
 		.isInstanceOf(IllegalArgumentException.class)
 		.hasMessage(errorMessage);
+    }
+
+    @Test 
+    @DisplayName("Check that two books with same isbn are equal")
+    void twoBooksWithSameIsbnAreEqual() {
+        Book book1 = new Book("a", "b", "123");
+        Book book2 = new Book("b", "c", "123");
+
+        boolean result = Objects.equals(book1, book2);
+
+        Assertions.assertThat(result).isTrue();
+    }
+
+    @Test 
+    @DisplayName("Check that two books with different isbn are not equal")
+    void twoBooksWithDifferentIsbnAreNotEqual() {
+        Book book1 = new Book("a", "b", "123");
+        Book book2 = new Book("b", "c", "12gg3");
+
+        boolean result = Objects.equals(book1, book2);
+
+        Assertions.assertThat(result).isFalse();
+    }
+
+    @Test 
+    @DisplayName("Check that two books with same isbn have the same hashcode")
+    void booksWithSameIsbnHaveSameHashCode() {
+        Book book1 = new Book("a", "b", "123");
+        Book book2 = new Book("b", "c", "123");
+
+        int hash1 = book1.hashCode();
+        int hash2 = book2.hashCode();
+
+        boolean result = Objects.equals(hash1, hash2);
+
+        Assertions.assertThat(result).isTrue();
     }
 }
