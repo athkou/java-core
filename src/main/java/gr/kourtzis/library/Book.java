@@ -19,6 +19,21 @@ public class Book {
         available = true;
     }
 
+    @Override 
+    public boolean equals(Object obj) {
+        if(obj instanceof Book book) {
+            return isbn.equals(book.isbn);
+        }
+        else {
+            return false;
+        }
+    }
+
+    @Override
+    public int hashCode() {
+        return isbn.length();
+    }
+
     public void borrow() {
         available = false;
     }
