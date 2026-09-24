@@ -31,7 +31,7 @@ public class Book {
 
     @Override
     public int hashCode() {
-        return isbn.length();
+        return isbn.hashCode();
     }
 
     public void borrow() {
