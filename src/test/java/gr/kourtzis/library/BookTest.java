@@ -176,4 +176,26 @@ public class BookTest {
 
         Assertions.assertThat(result).isTrue();
     }
+
+    @Test 
+    @DisplayName("Check that after one initialization of an book object the counter is 1")
+    void checkBookCounterIsOne() {
+        int counterBefore = Book.getBookCounter();
+        new Book("ab", "bc", "12345");
+        int counterAfter = Book.getBookCounter();
+
+        Assertions.assertThat(counterAfter).isEqualTo(counterBefore + 1);
+    }
+
+    @Test 
+    @DisplayName("Check that after one houndred initializations of book objects the counter is 100")
+    void checkBookCounterIsOneHoundred() {
+        int counterBefore = Book.getBookCounter();
+        for(int i = 0; i < 100; ++i) {
+            new Book("a", "b", "123" + i);
+        }
+        int counterAfter = Book.getBookCounter();
+        
+        Assertions.assertThat(counterAfter).isEqualTo(counterBefore + 100);
+    }
 }

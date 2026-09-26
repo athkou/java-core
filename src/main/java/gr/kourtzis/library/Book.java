@@ -1,6 +1,8 @@
 package gr.kourtzis.library;
 
 public class Book {
+    private static int bookCounter;
+
     private String title;
     private String author;
     private String isbn;
@@ -17,6 +19,12 @@ public class Book {
         this.isbn = isbn;
 
         available = true;
+
+        ++bookCounter;
+    }
+
+    public static int getBookCounter() {
+        return bookCounter;
     }
 
     @Override 
