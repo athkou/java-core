@@ -85,4 +85,26 @@ public class MemberTest {
         .isInstanceOf(IllegalArgumentException.class)
         .hasMessage(errorMessage);
     }
+
+    @Test 
+    @DisplayName("Check that after one initialization of a Member object the counter is 1")
+    void checkBookCounterIsOne() {
+        int counterBefore = Member.getMemberCounter();
+        new Member(1L, "12345");
+        int counterAfter = Member.getMemberCounter();
+
+        Assertions.assertThat(counterAfter).isEqualTo(counterBefore + 1);
+    }
+
+    @Test 
+    @DisplayName("Check that after one houndred initializations of Member objects the counter is 100")
+    void checkBookCounterIsOneHoundred() {
+        int counterBefore = Member.getMemberCounter();
+        for(int i = 0; i < 100; ++i) {
+            new Member(i + 3, "a");
+        }
+        int counterAfter = Member.getMemberCounter();
+        
+        Assertions.assertThat(counterAfter).isEqualTo(counterBefore + 100);
+    }
 }

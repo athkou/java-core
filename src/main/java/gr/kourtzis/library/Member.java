@@ -1,6 +1,7 @@
 package gr.kourtzis.library;
 
 public class Member {
+    private static int memberCounter;
     private long id;
     private String name;
     private int borrowedBooks;
@@ -11,6 +12,12 @@ public class Member {
         
         this.id = id;
         this.name = name;
+
+        ++memberCounter;
+    }
+
+    public static int getMemberCounter() {
+        return memberCounter;
     }
 
     public void borrowBook() {
