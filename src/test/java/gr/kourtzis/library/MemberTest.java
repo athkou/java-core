@@ -107,4 +107,12 @@ public class MemberTest {
         
         Assertions.assertThat(counterAfter).isEqualTo(counterBefore + 100);
     }
+
+    @Test 
+    @DisplayName("Check that getDescription for a member objekt prints Member")
+    void descriptionShouldPrintMember(Member member) {
+        String description = member.getDescription();
+
+        Assertions.assertThat(description).isEqualTo("Member");
+    }
 }

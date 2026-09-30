@@ -32,4 +32,12 @@ public class LibrarianTest {
 
         Assertions.assertThat(employeeNumber).isEqualTo(222335L);
     }
+
+    @Test 
+    @DisplayName("Check that getDescription for a librarian object prints Librarian")
+    void descriptionShouldPrintLibrarian(Librarian librarian) {
+        String description = librarian.getDescription();
+
+        Assertions.assertThat(description).isEqualTo("Librarian");
+    }
 }
