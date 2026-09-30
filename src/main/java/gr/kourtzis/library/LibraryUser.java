@@ -3,7 +3,7 @@ package gr.kourtzis.library;
 import lombok.Getter;
 
 @Getter 
-public class LibraryUser {
+public abstract class LibraryUser {
     private long id;
     private String name;
 
@@ -14,6 +14,8 @@ public class LibraryUser {
         this.id = id;
         this.name = name;
     }
+
+    public abstract String getDescription();
 
     private void checkId(long id) {
         if(id <= 0) {

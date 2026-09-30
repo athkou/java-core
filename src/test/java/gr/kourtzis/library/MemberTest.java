@@ -115,4 +115,13 @@ public class MemberTest {
 
         Assertions.assertThat(description).isEqualTo("Member");
     }
+
+    @Test 
+    @DisplayName("Check in case of polymorhismus the correct getDescription is called")
+    void showGetDescriptionFromMember() {
+        LibraryUser user = new Member(33L, "Homer");
+        String message = user.getDescription();
+
+        Assertions.assertThat(message).isEqualTo("Member");
+    }
 }
