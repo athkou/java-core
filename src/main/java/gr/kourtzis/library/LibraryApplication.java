@@ -8,5 +8,8 @@ public class LibraryApplication {
         Book book2 = new Book("Clean Code", "Robert Martin", "978-0135398579");
 
         System.out.println(Objects.equals(book1, book2));
+
+        LibraryUser user = new Member(33L, "Homer");
+        System.out.println("Description: " + user.getDescription());
     }
 }
