@@ -10,4 +10,9 @@ public class Librarian extends LibraryUser {
         super(id, name);
         this.employeeNumber = employeeNumber;
     }
+
+    @Override 
+    public String getDescription() {
+        return "Librarian";
+    }
 }

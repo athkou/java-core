@@ -14,6 +14,11 @@ public class Member extends LibraryUser {
         ++memberCounter;
     }
 
+    @Override
+    public String getDescription() {
+        return "Member";
+    }
+
     public static int getMemberCounter() {
         return memberCounter;
     }
