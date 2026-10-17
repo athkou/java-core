@@ -40,4 +40,11 @@ public class LibrarianTest {
 
         Assertions.assertThat(description).isEqualTo("Librarian");
     }
+
+    @Test 
+    @DisplayName("Check that Librarian is a Notifiable") 
+    void checkLibrarianIsNotifiable(Librarian librarian) {
+        boolean result = (librarian instanceof Notifiable);
+        Assertions.assertThat(result).isTrue();
+    }
 }
