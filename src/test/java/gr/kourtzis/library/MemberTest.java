@@ -124,4 +124,21 @@ public class MemberTest {
 
         Assertions.assertThat(message).isEqualTo("Member");
     }
+
+    @Test 
+    @DisplayName("Check that member implements notifiable")
+    void chekMemberIsANotifiable(final Member member) {
+         boolean result = (member instanceof Notifiable);
+
+         Assertions.assertThat(result).isTrue();
+    }
+
+    @Test 
+    @DisplayName("Check that notifiable is a member")
+    void checkNotifiableIsMember(final Member member) {
+        Notifiable notifiable = new Member(3L, "Homer");
+        boolean result = (notifiable instanceof Member);
+
+        Assertions.assertThat(result).isTrue();
+    }
 }

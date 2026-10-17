@@ -3,7 +3,7 @@ package gr.kourtzis.library;
 import lombok.Getter;
 
 @Getter 
-public class Member extends LibraryUser {
+public class Member extends LibraryUser implements Notifiable {
     private static int memberCounter;
     
     private int borrowedBooks;
@@ -12,6 +12,11 @@ public class Member extends LibraryUser {
         super(id, name);
 
         ++memberCounter;
+    }
+
+    @Override 
+    public void notifyUser(final String message) {
+        System.out.println("Member notified: " + message);
     }
 
     @Override
